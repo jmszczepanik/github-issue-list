@@ -164,14 +164,3 @@
     right: 13px;
     cursor: pointer;
 }
-
-.issue-list__element__star__svg {
-    fill: #fff;
-    fill-rule: evenodd;
-    stroke: #e0e0e0;
-}
-
-.issue-list__element__star__svg--active {
-    stroke: none;
-    fill: #21233d;
-}
