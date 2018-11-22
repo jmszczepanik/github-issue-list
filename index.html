@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+</head>
+<body class="app">
+    <div class="window">
+        <aside class="window__sidebar">
+            <div class="window__sidebar__options">
+                <div class="options">
+                    <div class="options__button options__button--close"></div>
+                    <div class="options__button options__button--minimize"></div>
+                    <div class="options__button options__button--maximize"></div>
+                </div>
+            </div>
+            <nav class="window__sidebar__filters" id="sidebar-filters">
+                
+            </nav>
+        </aside>
+        <section class="window__list" id="issues">
+            
+        </section>
+    </div>
+    <script id="filters-template" type="text/x-handlebars-template">
+        <ul class="filters">
+            {{#each filters}}
+            <li class="filters__item {{#if active}}filters__item--active{{/if}}">
+                <img class="filters__item__icon" src={{img}} alt={{name}} />
+                <span class="filters__item__name">{{name}}</span>
+                <div class="filters__item__count">{{count}}</div>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <script type="text/x-handlebars-template" id="issue-list-template">
+        <ul class="list">
+            {{#each issues}}
+            <li class="list__date-section">
+                <!-- svg replace?-->
+                <span class="list__date-section__date">{{day}}</span>
+                <ul class="issue-list">
+                    {{#each items}}
+                    <li class="issue-list__element">
+                        <span class="issue-list__element__title">{{title}}</span>
+                        <img class="issue-list__element__star" src="assets/icon-star.svg"/>
+                    </li>
+                    {{/each}}
+                </ul>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
